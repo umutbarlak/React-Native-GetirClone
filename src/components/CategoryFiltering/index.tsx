@@ -22,7 +22,6 @@ const CategoryBox = ({
   activeCat: Cat;
   setCategory: () => void;
 }) => {
-  console.log(item.name == activeCat?.name);
   return (
     <TouchableOpacity
       onPress={() => {
@@ -58,7 +57,6 @@ const CategoryFiltering = ({
   const [categories, setCategories] = useState<Cat[]>(categoriesGetir);
   const [activeCat, setActiveCat] = useState(category);
 
-  console.log(category);
   return (
     <ScrollView
       style={{

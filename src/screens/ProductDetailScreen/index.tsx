@@ -24,8 +24,12 @@ const ProductDetail = (props) => {
   }
 
   return (
-    <View>
-      <ScrollView>
+    <View style={{ flex: 1 }}>
+      <ScrollView
+        style={{
+          flex: 1,
+        }}
+      >
         <ImageCarousel images={product?.images} />
         <DetailBox product={product} />
         <Text

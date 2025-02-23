@@ -4,10 +4,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import HomeNavigator from "./HomeNavigator";
-import SearchNavigator from "./SearchNavigator";
-import { Text, TouchableOpacity } from "react-native";
-import Home from "../screens/HomeScreen";
-import Search from "../screens/SearchScreen";
+import { TouchableOpacity } from "react-native";
 import { useIsFocused } from "@react-navigation/native";
 
 const CustomTabBarButton = ({ children }: any) => {
@@ -34,7 +31,7 @@ const Tab = createBottomTabNavigator();
 
 const RouteNavigator = () => {
   const isProductDetailsFocused = useIsFocused();
-  console.log(isProductDetailsFocused);
+
   return (
     <Tab.Navigator
       initialRouteName="home"

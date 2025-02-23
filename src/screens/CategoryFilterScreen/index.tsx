@@ -14,7 +14,6 @@ const Category = () => {
     setCategory(cat);
   }, []);
 
-  console.log(cat);
   return (
     <ScrollView stickyHeaderIndices={[0]}>
       <CategoryFiltering category={category} setCategory={setCategory} />

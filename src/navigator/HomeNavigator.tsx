@@ -29,22 +29,22 @@ function MyStack({
 }) {
   const tabHiddenRoutes = ["product-details", "cart-screen"];
 
-  React.useLayoutEffect(() => {
-    const routeName = getFocusedRouteNameFromRoute(route);
-    console.log("Route Name is ", routeName);
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("state", () => {
+      const routeName = getFocusedRouteNameFromRoute(route) ?? "home";
+      console.log("Current Route:", routeName);
 
-    if (tabHiddenRoutes.includes(routeName)) {
-      console.log("Kapat ", routeName);
-      navigation.setOptions({ tabBarStyle: { display: "none" } });
-    } else {
-      console.log("Aç ", routeName);
-      navigation.setOptions({ tabBarStyle: { display: "flex" } });
-    }
+      if (tabHiddenRoutes.includes(routeName)) {
+        navigation.setOptions({ tabBarStyle: { display: "none" } });
+      } else {
+        navigation.setOptions({ tabBarStyle: { display: "flex" } });
+      }
+    });
+
+    return unsubscribe;
   }, [navigation, route]);
 
   const [totalPrice, setTotalPrice] = useState<number>(0);
-
-  console.log(cartItems);
 
   const getProductsPrice = () => {
     if (cartItems.length === 0) {

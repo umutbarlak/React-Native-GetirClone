@@ -15,10 +15,10 @@ const CardButton = ({ product, addItemToCart }: cartButtonType) => {
   return (
     <View
       style={{
-        marginTop: 10,
         backgroundColor: "white",
         height: height * 0.1,
         padding: 5,
+        marginBottom: 10,
       }}
     >
       <TouchableOpacity
