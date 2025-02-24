@@ -31,7 +31,7 @@ function MyStack({
 
   useEffect(() => {
     const unsubscribe = navigation.addListener("state", () => {
-      const routeName = getFocusedRouteNameFromRoute(route) ?? "home";
+      const routeName = getFocusedRouteNameFromRoute(route) || "home";
       console.log("Current Route:", routeName);
 
       if (tabHiddenRoutes.includes(routeName)) {

@@ -19,6 +19,10 @@ const CardButton = ({ product, addItemToCart }: cartButtonType) => {
         height: height * 0.1,
         padding: 5,
         marginBottom: 10,
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        left: 0,
       }}
     >
       <TouchableOpacity

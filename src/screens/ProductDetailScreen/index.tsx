@@ -24,7 +24,7 @@ const ProductDetail = (props) => {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, position: "relative", height: "auto" }}>
       <ScrollView
         style={{
           flex: 1,
